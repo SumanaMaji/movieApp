@@ -26,7 +26,14 @@ export default function Description(props) {
     console.log("details"+ JSON.stringify(movie))
 
     return (
-        <div className='container-fluid d-flex pt-2'>       
+        <>
+        <header className='container-fluid shadow-sm pt-2 pb-2 bg-body rounded justify-content-between d-flex flex-row pt-1 pb-1'>
+                <div className='w-50 justify-content-between d-flex flex-row'>
+                    <h3>Movie details</h3>
+                </div>
+                <i className="fa-solid fa-house pt-2"></i>
+            </header>
+        <div className='container-fluid d-flex pt-2  movie-details'>       
                 <div className='container-fluid d-flex pt-2 description'>
                 <div className='h-175 image-container'>
                                 <img alt=''></img>
@@ -55,8 +62,8 @@ export default function Description(props) {
                         </div>
                         <p></p>
                     </div>
-                </div>
-           
+                </div>          
         </div>
+        </>
     )
 }

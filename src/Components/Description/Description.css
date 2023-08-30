@@ -2,6 +2,15 @@
     height: 220px;
     font-size: 15px;
 }
+
+header{
+    position: fixed;
+    z-index: 10000000000;
+}
+.movie-details{
+    position: relative;
+    top: 40px;
+}
 .description img {
     width: 200px;
     height: 250px;
