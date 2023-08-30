@@ -1,0 +1,11 @@
+.description{
+    height: 220px;
+    font-size: 15px;
+}
+.description img {
+    width: 200px;
+    height: 250px;
+    margin-right: 20px;
+    background-color: rgb(202, 202, 202);
+    /* border-radius: 10px; */
+}
