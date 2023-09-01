@@ -38,11 +38,9 @@ export default function Description(props) {
                 <div className='h-175 image-container'>
                                 <img alt=''></img>
                             </div>
-                    {/* <img src='https://d1csarkz8obe9u.cloudfront.net/posterpreviews/action-movie-poster-template-design-0f5fff6262fdefb855e3a9a3f0fdd361_screen.jpg?ts=1636996054' alt=''></img>*/}
-                    <div className=' pb-3 movie-details'> 
+                           <div className=' pb-3 movie-details'> 
                         <div className='d-flex'>
                             <h6 className='me-2'>{movie.title}</h6>
-                            {/* <p>({Math.round(movie.vote_average)})</p> */}
                             <p className='me-2'>({movie.vote_average ? (movie.vote_average).toFixed(2) : 0 })</p>
                         </div>
                         <div className='d-flex'>

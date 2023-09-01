@@ -61,8 +61,10 @@
 .name{
     margin-bottom: 0px;
     font-weight: 600;
+    padding: 2px 2px 2px 2px;
 }
-.description{
+.descriptionList{
     font-size: 10px;
     margin-bottom: 0px;
+    padding: 2px 2px 2px 2px;
 }

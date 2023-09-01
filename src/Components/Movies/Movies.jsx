@@ -25,7 +25,6 @@ export default function Movies(props) {
         setError(null);
       
         try {
-         // const response = await fetch(`https://api.example.com/items?page=${page}`);
           const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${page}`, {
             method: 'GET',
             headers: {
@@ -36,14 +35,11 @@ export default function Movies(props) {
         });
         const data = await response.json();
         console.log("data---"+data.page);
-         //setItems(prevItems => [...prevItems, ...data.results]);
 
          setTimeout(() => {
           setItems(data.results);
         }, 500);
 
-        //setItems(data.results);
-          //setPage(prevPage => prevPage + 1);
           setPage(data.page + 1);
         } catch (error) {
           setError(error);
@@ -52,7 +48,6 @@ export default function Movies(props) {
         }
       };
   
-      console.log("itemsss---"+ JSON.stringify(items));
       const searchResult= async() => {
         const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${movieName}&include_adult=false&language=en-US&page=1`, {
             method: 'GET',
@@ -87,11 +82,11 @@ export default function Movies(props) {
                                         <img alt=''></img>
                                     </div>
                                     <div className='h-25 details-container'>
-                                        <div>
+                                        <div className='name'>
                                             <p className='name'>{item.title.length > 20 ? item.title.slice(0, 15) + '...' : item.title}</p>
                                             <p>{item.vote_average}</p>
                                         </div>
-                                        <p className='description'>{item.overview.slice(0, 40) + '...'}</p>
+                                        <p className='descriptionList'>{item.overview.slice(0, 40) + '...'}</p>
                                     </div>
                                   </div>
                                 </div>
@@ -104,11 +99,6 @@ export default function Movies(props) {
       loader={<p>Loading...</p>}
       endMessage={<p>No more data to load.</p>}
     >
-      {/* <ul>
-        {items.map(item => (
-          <li key={item.id}>{item.title}</li>
-        ))}
-      </ul> */}
         <div className='movies-details justify-content-evenly d-flex flex-row mt-3'>
                 {items?.map((item, index) =>
                     <div className='cards' key={index} onClick={() => Idname(item.id)}>
@@ -121,7 +111,7 @@ export default function Movies(props) {
                                 <p className='name'>{item.title.length > 20? item.title.slice(0,20)+'...' : item.title}</p>
                                     <p>{item.vote_average}</p>
                                 </div>
-                                <p className='description'>{item.overview.slice(0,40)+'...'}</p>
+                                <p className='descriptionList'>{item.overview.slice(0,40)+'...'}</p>
                             </div>
                         </Link>
                     </div>       
